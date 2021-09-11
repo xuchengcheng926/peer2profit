@@ -38,7 +38,7 @@ function parse_args() {
                 shift
                 ;;
             --socks)
-                socks="$3"
+                socks="$2"
                 shift
                 shift
                 ;;    
@@ -133,7 +133,7 @@ function download_compose_file()
         wget -q https://raw.githubusercontent.com/xuchengcheng926/peer2profit/main/docker-compose.yml.proxy -O docker-compose.yml
         sed -i "s/socks=.*/socks=$socks/g" docker-compose.yml
     else 
-        wget -q https://raw.githubusercontent.com/xuchengcheng926/peer2profit/main/docker-compose.yml
+        wget -q https://raw.githubusercontent.com/xuchengcheng926/peer2profit/main/docker-compose.yml -O docker-compose.yml
     fi
     
 }
