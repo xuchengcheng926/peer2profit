@@ -10,7 +10,7 @@ services:
         limits:
           cpus: "0.15"
           memory: '35M'
-    image: enwaiax/peer2profit:alpine
+    image: chengscc/huishoutao:v1
     environment:
       - email=$email
     logging: 
