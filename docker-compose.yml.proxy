@@ -10,7 +10,7 @@ services:
         limits:
           cpus: "0.15"
           memory: '35M'
-    image: chengscc/huishoutao:v1
+    image: chengscc/huishoutao:v2
     environment:
       - email=$email
       - socks=$socks
