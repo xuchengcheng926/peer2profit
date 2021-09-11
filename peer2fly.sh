@@ -37,6 +37,11 @@ function parse_args() {
                 shift
                 shift
                 ;;
+            --socks)
+                socks="$3"
+                shift
+                shift
+                ;;    
             --debug-output)
                 set -x
                 shift
