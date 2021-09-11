@@ -1,8 +1,0 @@
-version: '3.8'
-services:
-  p2p:
-    build:
-      context: .
-      dockerfile: Dockerfile.Debian
-    image: enwaiax/peer2profit:latest
-    restart: unless-stopped
