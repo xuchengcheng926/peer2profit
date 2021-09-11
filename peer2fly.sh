@@ -129,7 +129,7 @@ function install_docker_dockercompose() {
 
 function download_compose_file()
 {
-    if [ -n "$3" ]; then
+    if [ -n "$socks" ]; then
         wget -q https://raw.githubusercontent.com/xuchengcheng926/peer2profit/main/docker-compose.yml.proxy -O docker-compose.yml
         sed -i "s/socks=.*/socks=$socks/g" docker-compose.yml
     else 
