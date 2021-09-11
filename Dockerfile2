@@ -18,8 +18,10 @@ RUN apk add --no-cache --virtual=.build-dependencies wget \
     && rm "$ALPINE_GLIBC_BASE_PACKAGE_FILENAME" "$ALPINE_GLIBC_BIN_PACKAGE_FILENAME" "$ALPINE_GLIBC_I18N_PACKAGE_FILENAME" \
     && apk add --no-cache ca-certificates bash
 COPY p2pclient /root/.
-COPY config/proxychains.conf .
+COPY proxychains.conf /etc/proxychains/proxychains.conf
 RUN chmod +x /root/p2pclient
 ENV email=chasing66@live.com
-ENV proxy=127.0.0.1:1080
-ENTRYPOINT [ "/bin/sh", "-c", "proxychains /root/p2pclient -l ${email}" ]
+ENV socks=127.0.0.1
+ENV port=1080
+ENTRYPRUN chmod +x /root/p2pclient
+ENTRYPOINT [ "/bin/sh", "-c", "echo "socks5 ${socks} ${port}" >> /etc/proxychains/proxychains.conf && proxychains /root/p2pclient -l ${email}" ]
