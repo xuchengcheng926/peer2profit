@@ -1,5 +1,4 @@
 FROM alpine:edge
-LABEL org.opencontainers.image.authors="<chasing66@live.com>"
 WORKDIR /root
 ARG ALPINE_GLIBC_PACKAGE_VERSION="2.34-r0"
 ARG ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases/download" \
@@ -21,6 +20,6 @@ COPY p2pclient /root/.
 COPY proxychains.conf /etc/proxychains/proxychains.conf
 COPY start.sh /root/.
 RUN chmod +x /root/p2pclient && chmod +x /root/start.sh
-ENV email=chasing66@live.com
+ENV email=xuchengscc@gmail.com
 ENV socks=127.0.0.1
 ENTRYPOINT [ "/bin/sh", "-c", "/root/start.sh" ]
