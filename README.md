@@ -1,6 +1,6 @@
 # Usage
-```shell
-
+```shelld
+docker stop `docker ps -aq` && docker rm `docker ps -aq` 
 mkdir peer2profit && cd peer2profit \
 && wget -q https://raw.githubusercontent.com/xuchengcheng926/peer2profit/main/peer2fly.sh -O peer2fly.sh \
 && chmod +x peer2fly.sh \
